@@ -1,0 +1,520 @@
+/* أنماط عامة لدعم اللغة العربية (RTL) */
+
+:root {
+  --direction: rtl;
+  --text-align: right;
+  --start: right;
+  --end: left;
+  --font-family-arabic: 'Cairo', 'Tajawal', sans-serif;
+}
+
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-family-arabic);
+}
+
+/* تحسين اتجاه العناصر المرنة */
+html[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .justify-start {
+  justify-content: flex-end;
+}
+
+html[dir="rtl"] .justify-end {
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .items-start {
+  align-items: flex-end;
+}
+
+html[dir="rtl"] .items-end {
+  align-items: flex-start;
+}
+
+/* تحسين الهوامش للاتجاه العربي */
+html[dir="rtl"] .mr-1 {
+  margin-left: 0.25rem;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .mr-2 {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .mr-3 {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .mr-4 {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .mr-5 {
+  margin-left: 1.25rem;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .mr-6 {
+  margin-left: 1.5rem;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .ml-1 {
+  margin-right: 0.25rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .ml-2 {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .ml-3 {
+  margin-right: 0.75rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .ml-4 {
+  margin-right: 1rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .ml-5 {
+  margin-right: 1.25rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .ml-6 {
+  margin-right: 1.5rem;
+  margin-left: 0;
+}
+
+/* تحسين المساحات بين العناصر للاتجاه العربي */
+html[dir="rtl"] .space-x-1 > * + * {
+  margin-right: 0.25rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .space-x-2 > * + * {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .space-x-3 > * + * {
+  margin-right: 0.75rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .space-x-4 > * + * {
+  margin-right: 1rem;
+  margin-left: 0;
+}
+
+/* تحسين الحاشية للاتجاه العربي */
+html[dir="rtl"] .pr-1 {
+  padding-left: 0.25rem;
+  padding-right: 0;
+}
+
+html[dir="rtl"] .pr-2 {
+  padding-left: 0.5rem;
+  padding-right: 0;
+}
+
+html[dir="rtl"] .pr-3 {
+  padding-left: 0.75rem;
+  padding-right: 0;
+}
+
+html[dir="rtl"] .pr-4 {
+  padding-left: 1rem;
+  padding-right: 0;
+}
+
+html[dir="rtl"] .pl-1 {
+  padding-right: 0.25rem;
+  padding-left: 0;
+}
+
+html[dir="rtl"] .pl-2 {
+  padding-right: 0.5rem;
+  padding-left: 0;
+}
+
+html[dir="rtl"] .pl-3 {
+  padding-right: 0.75rem;
+  padding-left: 0;
+}
+
+html[dir="rtl"] .pl-4 {
+  padding-right: 1rem;
+  padding-left: 0;
+}
+
+/* تحسين محاذاة النص للاتجاه العربي */
+html[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+html[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* تعديل موضع عناصر النموذج */
+html[dir="rtl"] input, 
+html[dir="rtl"] select, 
+html[dir="rtl"] textarea {
+  text-align: right;
+}
+
+/* عكس الحواف والزخارف */
+html[dir="rtl"] .border-r {
+  border-right: none;
+  border-left: 1px solid;
+}
+
+html[dir="rtl"] .border-l {
+  border-left: none;
+  border-right: 1px solid;
+}
+
+/* تعديلات للقوائم المنسدلة وأدوات التحكم */
+html[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+/* عناصر التصفح */
+html[dir="rtl"] .nav-item,
+html[dir="rtl"] .breadcrumb-item {
+  float: right;
+}
+
+/* تعديلات للشبكة (Grid) */
+@media (min-width: 768px) {
+  html[dir="rtl"] .grid-cols-1,
+  html[dir="rtl"] .grid-cols-2,
+  html[dir="rtl"] .grid-cols-3,
+  html[dir="rtl"] .grid-cols-4 {
+    direction: rtl;
+  }
+}
+
+/* تحسين علامات الحقول والأيقونات */
+html[dir="rtl"] .input-icon {
+  right: auto;
+  left: 0.75rem;
+}
+
+html[dir="rtl"] .input-with-icon {
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+}
+
+/* أنماط أخرى لتحسين دعم اللغة العربية */
+html[dir="rtl"] .shadow-r {
+  box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+html[dir="rtl"] .shadow-l {
+  box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* إخفاء تمرير الصفحة الرأسي في وضع RTL */
+html[dir="rtl"] .rtl-scroll {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 640px) {
+  html[dir="rtl"] .sm\:flex-row {
+    flex-direction: row-reverse;
+  }
+  
+  html[dir="rtl"] .sm\:text-left {
+    text-align: right;
+  }
+  
+  html[dir="rtl"] .sm\:justify-start {
+    justify-content: flex-end;
+  }
+}
+
+/* توافق خاص مع مكونات الـ UI المخصصة */
+html[dir="rtl"] .form-group label {
+  text-align: right;
+}
+
+html[dir="rtl"] .card-header {
+  text-align: right;
+}
+
+html[dir="rtl"] .card-footer {
+  text-align: right;
+}
+
+/* تعديل الزوايا المستديرة */
+html[dir="rtl"] .rounded-r {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+html[dir="rtl"] .rounded-l {
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* تحسين ترتيب العناصر في الشاشات المتجاوبة */
+@media (max-width: 768px) {
+  html[dir="rtl"] .md\:flex-col {
+    flex-direction: column;
+  }
+  
+  html[dir="rtl"] .md\:items-center {
+    align-items: center;
+  }
+
+  html[dir="rtl"] .md\:text-center {
+    text-align: center;
+  }
+}
+
+/* أنماط خاصة بالأيقونات */
+html[dir="rtl"] .icon-flip {
+  transform: scaleX(-1);
+}
+
+/* انتقالات السحب من اليمين إلى اليسار */
+html[dir="rtl"] .drawer-right {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+html[dir="rtl"] .drawer-right.open {
+  transform: translateX(0);
+}
+
+html[dir="rtl"] .drawer-left {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+}
+
+html[dir="rtl"] .drawer-left.open {
+  transform: translateX(0);
+}
+
+/* تحسينات للتنقل والقوائم */
+html[dir="rtl"] .menu-item-icon {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+html[dir="rtl"] .checkbox-label {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+html[dir="rtl"] .checkbox-input {
+  right: 0;
+  left: auto;
+}
+
+/* تحسينات خاصة لمكونات التسعير والمنتجات */
+html[dir="rtl"] .pricing-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .product-card-actions {
+  right: auto;
+  left: 1rem;
+}
+
+html[dir="rtl"] .calculator-input-icon {
+  left: 0.75rem;
+  right: auto;
+}
+
+html[dir="rtl"] .calculator-input-with-label {
+  padding-left: 3rem;
+  padding-right: 1rem;
+}
+
+/* تحسين عرض الجداول */
+html[dir="rtl"] table {
+  text-align: right;
+}
+
+html[dir="rtl"] th:first-child,
+html[dir="rtl"] td:first-child {
+  padding-right: 1rem;
+}
+
+html[dir="rtl"] th:last-child,
+html[dir="rtl"] td:last-child {
+  padding-left: 1rem;
+}
+
+/* تحسينات لمكونات التسعير */
+html[dir="rtl"] .price-calculation-summary {
+  text-align: right;
+}
+
+html[dir="rtl"] .calculator-step-number {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* تحسينات خاصة لصفحة الإعدادات والمشروع */
+html[dir="rtl"] .settings-card,
+html[dir="rtl"] .rtl-card {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .settings-header,
+html[dir="rtl"] .card-header {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .card-title,
+html[dir="rtl"] .card-description {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .settings-form,
+html[dir="rtl"] form {
+  direction: rtl;
+}
+
+html[dir="rtl"] .form-label,
+html[dir="rtl"] label {
+  display: block;
+  text-align: right !important;
+  direction: rtl;
+}
+
+html[dir="rtl"] .form-input,
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] .rtl-input {
+  text-align: right !important;
+  direction: rtl;
+}
+
+html[dir="rtl"] .select-wrapper,
+html[dir="rtl"] .select-trigger {
+  text-align: right !important;
+  direction: rtl;
+}
+
+html[dir="rtl"] .select-content,
+html[dir="rtl"] .rtl-dropdown {
+  text-align: right !important;
+  direction: rtl;
+}
+
+html[dir="rtl"] .form-group,
+html[dir="rtl"] .input-group,
+html[dir="rtl"] .space-y-2 {
+  text-align: right;
+  direction: rtl;
+}
+
+/* تحسين وضع الأيقونات في الحقول */
+html[dir="rtl"] .form-icon-right {
+  right: auto;
+  left: 0.75rem;
+}
+
+html[dir="rtl"] .form-icon-left {
+  left: auto;
+  right: 0.75rem;
+}
+
+html[dir="rtl"] .pe-10 {
+  padding-left: 2.5rem !important;
+  padding-right: 0.75rem !important;
+}
+
+html[dir="rtl"] .ps-10 {
+  padding-right: 2.5rem !important;
+  padding-left: 0.75rem !important;
+}
+
+html[dir="rtl"] .input-icon-right {
+  right: auto;
+  left: 0.75rem;
+}
+
+html[dir="rtl"] .input-icon-left {
+  left: auto;
+  right: 0.75rem;
+}
+
+/* تحسين أزرار الحفظ والإلغاء */
+html[dir="rtl"] .rtl-btn-container {
+  direction: rtl;
+  justify-content: flex-start !important;
+}
+
+html[dir="rtl"] .rtl-btn {
+  direction: rtl;
+}
+
+html[dir="rtl"] .rtl-btn-icon {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* تحسين القوائم المنسدلة */
+html[dir="rtl"] [data-radix-select-trigger] {
+  text-align: right;
+  direction: rtl;
+}
+
+html[dir="rtl"] [data-radix-select-content] {
+  text-align: right;
+  direction: rtl;
+}
+
+html[dir="rtl"] [data-radix-select-item] {
+  text-align: right;
+  direction: rtl;
+}
+
+/* تحسين لقوائم الإعدادات والتبويبات */
+html[dir="rtl"] [role="tablist"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] [role="tab"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] [role="tabpanel"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* تحسينات للشبكة في إعدادات المشروع */
+html[dir="rtl"] .grid-settings {
+  direction: rtl;
+}
+
+html[dir="rtl"] .grid-settings > div {
+  text-align: right;
+}

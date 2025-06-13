@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Cairo", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* تحسينات الخط العربي */
+  .font-cairo {
+    font-family: "Cairo", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* تحسين عرض النصوص العربية */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-left {
+    text-align: right !important;
+  }
+
+  [dir="rtl"] .text-right {
+    text-align: left !important;
+  }
+
+  /* تحسين الأرقام العربية */
+  .arabic-numbers {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  /* تحسين المدخلات للأرقام */
+  input[type="number"] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* منع تكبير الخط في iOS */
+  input[type="number"]:focus {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 768px) {
+    input[type="number"] {
+      font-size: 16px;
+    }
+  }
+}
+
+/* تحسينات إضافية للخط العربي */
+.rtl-text {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr-numbers {
+  direction: ltr;
+  display: inline-block;
+}
+
+/* تحسين عرض الأرقام في الجداول */
+.numeric-cell {
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+}
+
+[dir="rtl"] .numeric-cell {
+  text-align: left;
+}
+
+/* تحسين الانيميشن */
+.animate-in {
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+}
+
+.slide-in-from-top {
+  animation-name: slideInFromTop;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* تحسين الطباعة */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+}
